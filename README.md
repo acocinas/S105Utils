@@ -42,7 +42,7 @@ The exercises  must be executed from the command line, not just from the IDE. Cr
 
   ---
 
-## 🎯 Target
+## 🎯 Objectives
 - Learn and practice with **console commands**.
 -  Learn how **Java** annotations work.
 - Apply best practices in the development and management of GitHub repositories.
