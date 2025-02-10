@@ -1,24 +1,32 @@
-package com.library.level1.exercise3;
+package com.library.level1.exercise3.controller;
 
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class DirectoryTreeToFile {
-    public static void main(String[] args) {
-        if (args.length != 2) {
-            System.out.println("Usage: java DirectoryTreeToFile <directory_path> <output_file_path>");
-            return;
+    public static void run(String path) {
+        Scanner sc = new Scanner(System.in);
+        if (path == null || path.isBlank()){
+            System.out.println("Introduce el directorio path: ");
+            path = sc.nextLine();
         }
+        sc.close();
 
-        File directory = new File(args[0]);
+        path = path.replace("/", File.separator).replace("\\", File.separator);
+
+        File directory = new File(path);
         if (!directory.exists() || !directory.isDirectory()) {
             System.out.println("Invalid directory path.");
-            return;
+            System.exit(1);
         }
-        try (FileWriter writer = new FileWriter(args[1])) {
+
+        File outputFile = new File(directory, "output.txt");
+
+        try (FileWriter writer = new FileWriter(outputFile)) {
             listDirectory(directory, 0, writer);
-            System.out.println("Directory tree saved to " + args[1]);
+            System.out.println("Directory tree saved to " + outputFile.getAbsolutePath());
         } catch (IOException e) {
             System.out.println("Error writing to file: " + e.getMessage());
         }
@@ -32,7 +40,8 @@ public class DirectoryTreeToFile {
                 for (int i = 0; i < level; i++) {
                     writer.write("  ");
                 }
-                writer.write((file.isDirectory() ? "D" : "F") + " - " + file.getName() + " - Last Modified: " + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(file.lastModified()) + "\n");
+                writer.write((file.isDirectory() ? "D" : "F") + " - " + file.getName() + " - Last Modified: " +
+                        new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(file.lastModified()) + "\n");
                 if (file.isDirectory()) {
                     listDirectory(file, level + 1, writer);
                 }
