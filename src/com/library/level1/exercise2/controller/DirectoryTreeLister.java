@@ -14,8 +14,6 @@ public class DirectoryTreeLister {
         }
         sc.close();
 
-
-
         path = path.replace("/", File.separator).replace("\\", File.separator);
 
         File directory = new File(path);
