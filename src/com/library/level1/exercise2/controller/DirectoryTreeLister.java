@@ -11,8 +11,12 @@ public class DirectoryTreeLister {
         if (path == null || path.isBlank()){
             System.out.println("Introduce el directorio path: ");
             path = sc.nextLine();
-            sc.close();
         }
+        sc.close();
+
+
+
+        path = path.replace("/", File.separator).replace("\\", File.separator);
 
         File directory = new File(path);
         if (!directory.exists() || !directory.isDirectory()) {

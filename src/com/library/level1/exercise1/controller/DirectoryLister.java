@@ -12,7 +12,7 @@ public class DirectoryLister {
             path = sc.nextLine().trim();
         }
         sc.close();
-        
+
         path = path.replace("/", File.separator).replace("\\", File.separator);
 
         File directory = new File(path);
