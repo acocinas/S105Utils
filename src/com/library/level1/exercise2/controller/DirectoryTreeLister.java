@@ -5,7 +5,6 @@ import java.util.Arrays;
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
-
 public class DirectoryTreeLister {
     public static void run(String path) {
         Scanner sc = new Scanner(System.in);
@@ -20,7 +19,6 @@ public class DirectoryTreeLister {
             System.out.println("Invalid directory path.");
             System.exit(1);
         }
-
         listDirectory(directory, 0);
     }
 

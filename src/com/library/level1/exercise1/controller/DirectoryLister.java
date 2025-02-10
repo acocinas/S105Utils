@@ -9,9 +9,12 @@ public class DirectoryLister {
         Scanner sc = new Scanner(System.in);
         if (path == null || path.isBlank()){
             System.out.println("Introduce el directorio path: ");
-            path = sc.nextLine();
-            sc.close();
+            path = sc.nextLine().trim();
         }
+        sc.close();
+        
+        path = path.replace("/", File.separator).replace("\\", File.separator);
+
         File directory = new File(path);
         if (!directory.exists() || !directory.isDirectory()){
             System.out.println("Invalid directory path");
