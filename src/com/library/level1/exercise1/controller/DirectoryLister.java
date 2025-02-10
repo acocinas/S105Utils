@@ -1,19 +1,21 @@
-package com.library.level1.exercise1;
+package com.library.level1.exercise1.controller;
 
 import java.io.File;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class DirectoryLister {
-    public static void main (String[] args){
-        if (args.length != 1){
-            System.out.println("Usage: java DirectoryLister <directory_path>");
-            return;
+    public static void run (String path){
+        Scanner sc = new Scanner(System.in);
+        if (path == null || path.isBlank()){
+            System.out.println("Introduce el directorio path: ");
+            path = sc.nextLine();
+            sc.close();
         }
-
-        File directory = new File(args[0]);
+        File directory = new File(path);
         if (!directory.exists() || !directory.isDirectory()){
             System.out.println("Invalid directory path");
-            return;
+            System.exit(1);
         }
 
         File[] files = directory.listFiles();
@@ -24,5 +26,4 @@ public class DirectoryLister {
             }
         }
     }
-
 }
