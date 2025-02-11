@@ -1,4 +1,4 @@
-package com.library.level1.exercise5.Entities;
+package com.library.level1.exercise5.entities;
 
 import java.io.Serializable;
 
@@ -11,8 +11,16 @@ public class Person implements Serializable {
         this.age = age;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
     @Override
     public String toString() {
-        return "Person--> name " + name + ", age=" + age ;
+        return "Persona--> nombre " + name + ", edad " + age ;
     }
 }
