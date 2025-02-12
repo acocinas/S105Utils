@@ -1,20 +1,19 @@
 package com.library.level1.exercise2.controller;
 
 import java.io.File;
-import java.util.Arrays;
+import java.nio.file.*;
+import java.util.*;
 import java.text.SimpleDateFormat;
-import java.util.Scanner;
 
 public class DirectoryTreeLister {
     public static void run(String path) {
         Scanner sc = new Scanner(System.in);
-        if (path == null || path.isBlank()){
+        while (path == null || path.isBlank() || !isValidFile(path)) {
             System.out.println("Introduce el directorio path: ");
             path = sc.nextLine();
+            path = path.replace("/", File.separator).replace("\\", File.separator);
         }
         sc.close();
-
-        path = path.replace("/", File.separator).replace("\\", File.separator);
 
         File directory = new File(path);
         if (!directory.exists() || !directory.isDirectory()) {
@@ -22,6 +21,11 @@ public class DirectoryTreeLister {
             System.exit(1);
         }
         listDirectory(directory, 0);
+    }
+
+    private static boolean isValidFile(String path){
+        Path filePath = Paths.get(path);
+        return Files.exists(filePath);
     }
 
     private static void listDirectory(File directory, int level) {

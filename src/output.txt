@@ -1,0 +1,27 @@
+D - com - Last Modified: 2025-02-04 17:49:22
+  D - library - Last Modified: 2025-02-04 17:49:31
+    D - level1 - Last Modified: 2025-02-10 20:26:38
+      D - exercise1 - Last Modified: 2025-02-12 10:30:13
+        F - Main.java - Last Modified: 2025-02-12 10:30:13
+        D - controller - Last Modified: 2025-02-12 10:47:20
+          F - DirectoryLister.java - Last Modified: 2025-02-12 10:47:20
+      D - exercise2 - Last Modified: 2025-02-10 20:26:40
+        F - Main.java - Last Modified: 2025-02-10 20:26:40
+        D - controller - Last Modified: 2025-02-12 17:47:31
+          F - DirectoryTreeLister.java - Last Modified: 2025-02-12 17:47:31
+      D - exercise3 - Last Modified: 2025-02-10 20:41:00
+        F - Main.java - Last Modified: 2025-02-10 20:41:00
+        D - controller - Last Modified: 2025-02-10 20:49:07
+          F - DirectoryTreeToFile.java - Last Modified: 2025-02-10 20:49:07
+      D - exercise4 - Last Modified: 2025-02-11 11:12:11
+        F - Main.java - Last Modified: 2025-02-11 11:12:11
+        D - controller - Last Modified: 2025-02-11 11:32:29
+          F - TextFileReader.java - Last Modified: 2025-02-11 11:32:29
+      D - exercise5 - Last Modified: 2025-02-11 20:18:07
+        F - Main.java - Last Modified: 2025-02-11 20:18:07
+        D - controller - Last Modified: 2025-02-11 20:34:49
+          F - SerializationExample.java - Last Modified: 2025-02-11 20:34:49
+        D - entities - Last Modified: 2025-02-11 20:33:56
+          F - Person.java - Last Modified: 2025-02-11 20:33:56
+F - output.txt - Last Modified: 2025-02-12 17:48:08
+F - readme.txt - Last Modified: 2025-02-12 17:41:58

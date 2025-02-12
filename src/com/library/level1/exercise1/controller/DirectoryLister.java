@@ -15,12 +15,7 @@ public class DirectoryLister {
             path = sc.nextLine().trim();
             path = path.replace("/", File.separator).replace("\\", File.separator);
         }
-//        if (path == null || path.isBlank()){
-//            System.out.println("Introduce el directorio path: ");
-//            path = sc.nextLine().trim();
-//        }
         sc.close();
-
 
         File directory = new File(path);
         if (!directory.exists() || !directory.isDirectory()) {

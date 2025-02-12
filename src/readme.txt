@@ -11,16 +11,17 @@ Estos comandos se deben ejecutar desde la raíz del proyecto. Para cualquier dud
 readme.txt está el árbol del proyecto, que facilita seguir las rutas correctas tanto para compilar como ejecutar.
 
 ## Ejercicio 1: Listar contenido de un directorio
-1. Compilar:
-   javac -d out/production/S105Utils src/com/library/level1/exercise1/DirectoryLister.java
+1. Compilar todos los package del ejercicio 1 a la vez:
+   javac -d out/production/S105Utils src/com/library/level1/exercise1/**/*.java
 2. Ejecutar:
-   java -cp out/production/S105Utils com.library.level1.exercise1.DirectoryLister ruta_del_directorio
+   java -cp out/production/S105Utils com.library.level1.exercise1.Main     ruta_del_directorio(Opcional*)
+  *Opcional, puesto que si no se pone al ejecutar, se pedirá hasta dar una ruta correcta. por ejemplo (./out)(src)
 
 ## Ejercicio 2: Listar árbol de directorios
 1. Compilar:
-   javac -d out/production/S105Utils src/com/library/level1/exercise2/DirectoryTreeLister.java
+   javac -d out/production/S105Utils src/com/library/level1/exercise2/**/*.java
 2. Ejecutar:
-   java -cp out/production/S105Utils com.library.level1.exercise2.DirectoryTreeLister ruta_del_directorio
+   java -cp out/production/S105Utils com.library.level1.exercise2.Main ruta_del_directorio
 
 ## Ejercicio 3: Guardar árbol de directorios en un fichero TXT
 1. Compilar:
