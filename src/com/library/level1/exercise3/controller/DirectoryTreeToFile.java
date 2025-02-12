@@ -1,6 +1,9 @@
 package com.library.level1.exercise3.controller;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -8,17 +11,16 @@ import java.util.Scanner;
 public class DirectoryTreeToFile {
     public static void run(String path) {
         Scanner sc = new Scanner(System.in);
-        if (path == null || path.isBlank()){
-            System.out.println("Introduce el directorio path: ");
+        while (path == null || path.isBlank() || !isValidDirectory(path)) {
+            System.out.println("Introduce el directorio path(carpeta donde guardar el txt): ");
             path = sc.nextLine();
+            path = path.replace("/", File.separator).replace("\\", File.separator);
         }
         sc.close();
 
-        path = path.replace("/", File.separator).replace("\\", File.separator);
-
         File directory = new File(path);
         if (!directory.exists() || !directory.isDirectory()) {
-            System.out.println("Invalid directory path.");
+            System.out.println("Directorio no válido.");
             System.exit(1);
         }
 
@@ -26,10 +28,15 @@ public class DirectoryTreeToFile {
 
         try (FileWriter writer = new FileWriter(outputFile)) {
             listDirectory(directory, 0, writer);
-            System.out.println("Directory tree saved to " + outputFile.getAbsolutePath());
+            System.out.println("Directory tree saved to (la ruta del archivo es): " + outputFile.getAbsolutePath());
         } catch (IOException e) {
-            System.out.println("Error writing to file: " + e.getMessage());
+            System.out.println("Error escribiendo el archivo: " + e.getMessage());
         }
+    }
+
+    private static boolean isValidDirectory(String path){
+        Path directoryPath = Paths.get(path);
+        return Files.exists(directoryPath);
     }
 
     private static void listDirectory(File directory, int level, FileWriter writer) throws IOException {

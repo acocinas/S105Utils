@@ -21,13 +21,14 @@ readme.txt está el árbol del proyecto, que facilita seguir las rutas correctas
 1. Compilar:
    javac -d out/production/S105Utils src/com/library/level1/exercise2/**/*.java
 2. Ejecutar:
-   java -cp out/production/S105Utils com.library.level1.exercise2.Main ruta_del_directorio
+   java -cp out/production/S105Utils com.library.level1.exercise2.Main ruta_del_directorio(Opcional*)
+  *Opcional, puesto que si no se pone al ejecutar, se pedirá hasta dar una ruta correcta. por ejemplo (./out)(src)
 
-## Ejercicio 3: Guardar árbol de directorios en un fichero TXT
+## Ejercicio 3: Guardar árbol de directorios en un fichero TXT(
 1. Compilar:
-   javac -d out/production/S105Utils src/com/library/level1/exercise3/DirectoryTreeToFile.java
+   javac -d out/production/S105Utils src/com/library/level1/exercise3/**/*.java
 2. Ejecutar:
-   java -cp out/production/S105Utils com.library.level1.exercise3.DirectoryTreeToFile ruta_del_directorio ruta_del_fichero_salida.txt
+   java -cp out/production/S105Utils com.library.level1.exercise3.Main ruta_del_directorio
 
 ## Ejercicio 4: Leer y mostrar contenido de un fichero TXT
 1. Compilar:
