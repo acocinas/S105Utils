@@ -24,46 +24,32 @@ readme.txt está el árbol del proyecto, que facilita seguir las rutas correctas
    java -cp out/production/S105Utils com.library.level1.exercise2.Main ruta_del_directorio(Opcional*)
   *Opcional, puesto que si no se pone al ejecutar, se pedirá hasta dar una ruta correcta. por ejemplo (./out)(src)
 
-## Ejercicio 3: Guardar árbol de directorios en un fichero TXT(
+## Ejercicio 3: Guardar árbol de directorios en un fichero .txt(donde se guardará el archivo, devuelve la ruta)
 1. Compilar:
    javac -d out/production/S105Utils src/com/library/level1/exercise3/**/*.java
 2. Ejecutar:
-   java -cp out/production/S105Utils com.library.level1.exercise3.Main ruta_del_directorio
+   java -cp out/production/S105Utils com.library.level1.exercise3.Main ruta_del_directorio_donde_guardar(Opcional*)
+  *Opcional, puesto que si no se pone al ejecutar, se pedirá hasta dar un directorio correcto.
+  Recomendación (./out)(src)
 
 ## Ejercicio 4: Leer y mostrar contenido de un fichero TXT
 1. Compilar:
-   javac -d out/production/S105Utils src/com/library/level1/exercise4/FileReader.java
+   javac -d out/production/S105Utils src/com/library/level1/exercise4/**/*.java
 2. Ejecutar:
-   java -cp out/production/S105Utils com.library.level1.exercise4.FileReader ruta_del_fichero.txt
+   java -cp out/production/S105Utils com.library.level1.exercise4.Main ruta_del_fichero.txt(Opcional*)
+  *Opcional, se pedirá hasta dar una ruta correcta al archivo. Por ejemplo, si ha seguido la recomendación
+  del ejercicio 3 (./out/output.tx)(src/output.txt)
 
 ## Ejercicio 5: Serializar y deserializar un objeto
 1. Compilar:
-   javac -d out/production/S105Utils src/com/library/level1/exercise5/Controller/SerializationExample.java src/com/library/level1/exercise5/Entities/Person.java
+   javac -d out/production/S105Utils src/com/library/level1/exercise5/**/*.java
 2. Ejecutar:
-   java -cp out/production/S105Utils com.library.level1.exercise5.Controller.SerializationExample
+   java -cp out/production/S105Utils com.library.level1.exercise5.Main
 
 S105Utils
+.
+├── README.md
 ├── S105Utils.iml
-├── out
-│   └── production
-│       └── S105Utils
-│           └── com
-│               └── library
-│                   └── level1
-│                       ├── exercise1
-│                       │   └── DirectoryLister.class
-│                       ├── exercise2
-│                       │   └── DirectoryTreeLister.class
-│                       ├── exercise3
-│                       │   └── DirectoryTreeToFile.class
-│                       ├── exercise4
-│                       │   └── FileReader.class
-│                       └── exercise5
-│                           ├── Controller
-│                           │   └── SerializationExample.class
-│                           ├── Entities
-│                           │   └── Person.class
-│                           └── Main.class
 ├── output.txt
 ├── person.ser
 └── src
@@ -71,20 +57,26 @@ S105Utils
     │   └── library
     │       └── level1
     │           ├── exercise1
-    │           │   ├── DirectoryLister.class
-    │           │   └── DirectoryLister.java
+    │           │   ├── Main.java
+    │           │   └── controller
+    │           │       └── DirectoryLister.java
     │           ├── exercise2
-    │           │   ├── DirectoryTreeLister.class
-    │           │   └── DirectoryTreeLister.java
+    │           │   ├── Main.java
+    │           │   └── controller
+    │           │       └── DirectoryTreeLister.java
     │           ├── exercise3
-    │           │   ├── DirectoryTreeToFile.class
-    │           │   └── DirectoryTreeToFile.java
+    │           │   ├── Main.java
+    │           │   └── controller
+    │           │       └── DirectoryTreeToFile.java
     │           ├── exercise4
-    │           │   └── FileReader.java
+    │           │   ├── Main.java
+    │           │   └── controller
+    │           │       └── TextFileReader.java
     │           └── exercise5
-    │               ├── Controller
+    │               ├── Main.java
+    │               ├── controller
     │               │   └── SerializationExample.java
-    │               ├── Entities
-    │               │   └── Person.java
-    │               └── Main.java
+    │               └── entities
+    │                   └── Person.java
+    ├── output.txt
     └── readme.txt
